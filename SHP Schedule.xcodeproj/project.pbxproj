@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20ADB2271F6A36DF00C22916 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ADB2261F6A36DF00C22916 /* UserNotifications.framework */; };
 		6C3DF5D81F397F6800EF4AF4 /* WidgetPeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DF5D71F397F6800EF4AF4 /* WidgetPeriodTableViewCell.swift */; };
 		6C81A7AF1F37D68A008C47AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A7AE1F37D68A008C47AC /* SettingsViewController.swift */; };
 		6C81A7B11F37FE98008C47AC /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A7B01F37FE98008C47AC /* DateTableViewCell.swift */; };
 		6C81A7B31F37FEB6008C47AC /* ScheduleNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A7B21F37FEB6008C47AC /* ScheduleNameTableViewCell.swift */; };
 		6C81A7B51F37FEC6008C47AC /* PeriodDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A7B41F37FEC6008C47AC /* PeriodDetailTableViewCell.swift */; };
-		6CCE38101F3972A800773540 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE380F1F3972A800773540 /* NotificationCenter.framework */; };
 		6CCE38131F3972A800773540 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE38121F3972A800773540 /* TodayViewController.swift */; };
 		6CCE38161F3972A800773540 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCE38141F3972A800773540 /* MainInterface.storyboard */; };
 		6CCE381A1F3972A800773540 /* Today's SHP Schedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6CCE380D1F3972A800773540 /* Today's SHP Schedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -63,14 +61,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		20ADB2261F6A36DF00C22916 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		6C3DF5D71F397F6800EF4AF4 /* WidgetPeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetPeriodTableViewCell.swift; sourceTree = "<group>"; };
 		6C81A7AE1F37D68A008C47AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6C81A7B01F37FE98008C47AC /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		6C81A7B21F37FEB6008C47AC /* ScheduleNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleNameTableViewCell.swift; sourceTree = "<group>"; };
 		6C81A7B41F37FEC6008C47AC /* PeriodDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodDetailTableViewCell.swift; sourceTree = "<group>"; };
 		6CCE380D1F3972A800773540 /* Today's SHP Schedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Today's SHP Schedule.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CCE380F1F3972A800773540 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		6CCE38121F3972A800773540 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		6CCE38151F3972A800773540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		6CCE38171F3972A800773540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CCE38101F3972A800773540 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20ADB2271F6A36DF00C22916 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,15 +150,6 @@
 			name = "Week Table View Cells";
 			sourceTree = "<group>";
 		};
-		6CCE380E1F3972A800773540 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20ADB2261F6A36DF00C22916 /* UserNotifications.framework */,
-				6CCE380F1F3972A800773540 /* NotificationCenter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6CCE38111F3972A800773540 /* Today's SHP Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +168,6 @@
 			children = (
 				BEF4976A1F042BF40037F239 /* SHP Schedule */,
 				6CCE38111F3972A800773540 /* Today's SHP Schedule */,
-				6CCE380E1F3972A800773540 /* Frameworks */,
 				BEF497691F042BF40037F239 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,7 +267,7 @@
 					};
 					BEF497671F042BF40037F239 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZVKM27U5E4;
+						DevelopmentTeam = HMRWJJ5E7X;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -555,10 +539,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SHP Schedule/SHP Schedule.entitlements";
-				DEVELOPMENT_TEAM = ZVKM27U5E4;
+				DEVELOPMENT_TEAM = HMRWJJ5E7X;
 				INFOPLIST_FILE = "SHP Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedulev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -572,10 +556,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SHP Schedule/SHP Schedule.entitlements";
-				DEVELOPMENT_TEAM = ZVKM27U5E4;
+				DEVELOPMENT_TEAM = HMRWJJ5E7X;
 				INFOPLIST_FILE = "SHP Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedulev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;

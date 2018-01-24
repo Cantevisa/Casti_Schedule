@@ -182,7 +182,7 @@ class DayTableViewController: UITableViewController,UISplitViewControllerDelegat
         get {
             if scheduleArrayForDay?[0][0]=="Z" {
                 if let zClass =  schoolSchedule.personalSchedule?["Z"] {
-                    if zClass.characters.count > 0 {
+                    if zClass.count > 0 {
                         return false
                     }
                 }
@@ -229,7 +229,7 @@ class DayTableViewController: UITableViewController,UISplitViewControllerDelegat
         //print("dayTable viewDidLoad")
         
         if let personalClass = schoolSchedule.personalSchedule?[period!] {
-            if personalClass.characters.count>0 {
+            if personalClass.count>0 {
                 cell.periodLabel?.text = period! + " (" + personalClass + ")"
             }
         }
@@ -345,7 +345,7 @@ class DayTableViewController: UITableViewController,UISplitViewControllerDelegat
         if segue.identifier == "showSettings" {
             let settingsViewController = segue.destination.contentViewController as! SettingsViewController
             settingsViewController.schoolSchedule = self.schoolSchedule
-            settingsViewController.periods = ["A", "B", "C", "D", "E", "F", "G", "W", "X", "Y", "Z"]
+            settingsViewController.periods = ["1", "2", "3", "4", "5", "6", "7"]
         } else if segue.identifier == "dayToMonthSegue"{
             let monthViewController = segue.destination.contentViewController as! MonthCollectionViewController
             monthViewController.monthForView = dayForView

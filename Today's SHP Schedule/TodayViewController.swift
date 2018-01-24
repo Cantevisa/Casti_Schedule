@@ -36,20 +36,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
             return nil
         }
     }
-    
-    
-    private var shouldHideBeginningZPeriod:Bool {
-        get {
-            if scheduleArrayForDay?[0][0]=="Z" {
-                if let zClass =  schoolSchedule.personalSchedule?["Z"] {
-                    if zClass.characters.count > 0 {
-                        return false
-                    }
-                }
-            }
-            return true
-        }
-    }
+
     
     //MARK: - Methods
     override func viewDidLoad() {
@@ -64,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     func periodsForSchedule(_ schedule:String) -> String
     {
         var result = ""
-        let validPeriods = "ABCDEFG"
+        let validPeriods = "1234567"
         let dict = schoolSchedule.schedulePeriodDictionary
         if let periodArray = dict?[schedule] {
             for periodInfo in periodArray {
@@ -128,9 +115,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         else {
             var result = scheduleArrayForDay?.count ?? 0
             
-            if (shouldHideBeginningZPeriod) {
-                result -= 1
-            }
             return result
         }
     }
@@ -146,7 +130,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "widgetOnePeriod", for: indexPath) as! WidgetPeriodTableViewCell
-            let row = shouldHideBeginningZPeriod ? indexPath.row+1 : indexPath.row
+            let row = indexPath.row+1 : indexPath.row
             let period = scheduleArrayForDay?[row][0]
             cell.periodLabel.text = period
             

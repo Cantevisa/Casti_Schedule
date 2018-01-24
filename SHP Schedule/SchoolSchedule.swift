@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UserNotifications
 
 protocol SchoolScheduleDelegate {
     func startScheduleDownload()
@@ -18,7 +17,7 @@ public class SchoolSchedule {
     var delegate:SchoolScheduleDelegate?
     
     private let intervalBetweenUpdates = 24*60*60
-    private let urlForScheduleFiles = "http://web.shschools.org/kmo/"
+    private let urlForScheduleFiles = "http://schedule.castilleja.org/schedule_data"
     private let lastUpdatedFileName = "last_updated.txt"
     private let datesFileName = "dates.txt"
     private let defaults = UserDefaults(suiteName: "group.org.shschools.shpschedule.todayextension")
@@ -215,7 +214,6 @@ public class SchoolSchedule {
                     if let downloadedLastTimeServerWasUpdated = self?.downloadLastUpdatedDateFromServer() {
                         self?.defaults!.set(downloadedLastTimeServerWasUpdated, forKey: (self?.keyForLastTimeServerWasUpdated)!)
                     }
-                    self?.scheduleNotifications()
                     self?.isDownloading = false
                     //print("DONE DOWNLOADING")
                 }
@@ -259,82 +257,8 @@ public class SchoolSchedule {
     }
     
     
-    func scheduleNotifications() {
-        //print("Notifications Started...")
-        removeNotifications()
-        if let dict = self.dayScheduleDictionary
-        {
-            for (key,value) in dict {
-                if value[1] != "" //If that day has something in the notifications column on the text document
-                {
-                    handleOneNotification(key: key)
-                }
-            }
-        }
-        //print("Notifications Complete...")
-    }
+   
     
-    private func handleOneNotification(key: String)
-    {
-        let content = notificationContent(date: key.toDate()!)
-        if content != nil{
-            let time = key.toDate()
-            var triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: time!)
-            triggerDate.hour = 21
-            triggerDate.day = triggerDate.day!-1
-            //print("content = \(String(describing: content)) date = \(key)")
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-            let request = UNNotificationRequest(identifier: key, content: content!, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(request, withCompletionHandler: { (error) in if error != nil {
-                //Something went wrong
-                print("Error in scheduling notification")
-                }})
-            //print(" \(key) ---- \(time)")
-            
-        }
-    }
     
-    private func notificationContent(date: Date) -> UNMutableNotificationContent? {
-        if let schedule = dayScheduleDictionary?[date.toDateString()]?[0]        {
-            let content = UNMutableNotificationContent()
-            var title = ""
-            let body = ""
-            if (schedulePeriodDictionary?[schedule]) != nil
-            {
-                if let notification = dayScheduleDictionary?[date.toDateString()]?[1]
-                {
-                    if notification.characters.count > 0
-                    {
-                        title = notification + ". "
-                    }
-                }
-                content.title = title
-                content.body = body
-                content.sound = UNNotificationSound.default()
-    
-                return content
-            }
-            else
-            {
-                return nil
-            }
-        }
-        else
-        {
-            return nil
-        }
-    }
-    
-    func removeNotifications() {
-        let center = UNUserNotificationCenter.current()
-        if dayScheduleDictionary != nil {
-            for (key,_) in dayScheduleDictionary!
-            {
-                
-                center.removePendingNotificationRequests(withIdentifiers: [key])
-            }
-        }
-    }
     
 }

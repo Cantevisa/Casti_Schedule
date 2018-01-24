@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var latestSyncTimeLabel: UILabel!
     @IBOutlet weak var latestPublishedTimeLabel: UILabel!
 
-    var periods = ["A", "B", "C", "D", "E", "F", "G", "W", "X", "Y", "Z"]
+    var periods = ["1", "2", "3", "4", "5", "6", "7"]
 
     var schoolSchedule = SchoolSchedule()
     
@@ -34,9 +34,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         latestSyncTimeLabel.text! = schoolSchedule.lastTimeCheckedServer.toString(withFormat: "MMMM d, yyyy h:mm a")
         latestPublishedTimeLabel.text! = schoolSchedule.lastTimeServerWasUpdated.toString(withFormat: "MMMM d, yyyy h:mm a")
         self.navigationController?.isToolbarHidden = true
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: .UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: .UIKeyboardDidHide, object: nil)
 
         spinner.center = self.view.center
         self.view.addSubview(spinner)
@@ -49,27 +46,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillDisappear(animated)
         self.navigationController?.isToolbarHidden = false
         finishEditingCells()
-        NotificationCenter.default.removeObserver(#selector(keyboardDidShow))
-        NotificationCenter.default.removeObserver(#selector(keyboardDidHide))
 
     }
-    
-    @objc func keyboardDidShow(_ notification:Notification) {
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset = self.tableView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-
-        self.tableView.contentInset = contentInset
-        
-    }
-    
-    @objc func keyboardDidHide(_ notification:Notification) {
-
-        self.tableView.contentInset = UIEdgeInsets.zero
-        }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
