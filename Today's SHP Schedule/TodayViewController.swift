@@ -130,7 +130,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "widgetOnePeriod", for: indexPath) as! WidgetPeriodTableViewCell
-            let row = indexPath.row+1 : indexPath.row
+            let row = indexPath.row
             let period = scheduleArrayForDay?[row][0]
             cell.periodLabel.text = period
             

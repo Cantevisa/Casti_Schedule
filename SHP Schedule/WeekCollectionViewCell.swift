@@ -90,7 +90,7 @@ class WeekCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITable
             let period = scheduleArrayForDay?[index][0]
             cell.periodLabel.text = period
             if let personalClass = schoolSchedule.personalSchedule?[period!] {
-                if personalClass.characters.count>0 {
+                if personalClass.count>0 {
                     //print("\(period)...\(personalClass)")
                     cell.periodLabel?.text = period! + " (" + personalClass + ")"
                 }

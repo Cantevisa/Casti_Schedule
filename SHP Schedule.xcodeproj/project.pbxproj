@@ -267,7 +267,7 @@
 					};
 					BEF497671F042BF40037F239 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = HMRWJJ5E7X;
+						DevelopmentTeam = UDD5K7FX5V;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -539,10 +539,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SHP Schedule/SHP Schedule.entitlements";
-				DEVELOPMENT_TEAM = HMRWJJ5E7X;
+				DEVELOPMENT_TEAM = UDD5K7FX5V;
 				INFOPLIST_FILE = "SHP Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedulev";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -556,10 +556,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SHP Schedule/SHP Schedule.entitlements";
-				DEVELOPMENT_TEAM = HMRWJJ5E7X;
+				DEVELOPMENT_TEAM = UDD5K7FX5V;
 				INFOPLIST_FILE = "SHP Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedulev";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.shschools.kmorris.SHP-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
